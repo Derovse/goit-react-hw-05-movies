@@ -1,0 +1,28 @@
+.cast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.castItem {
+  margin: 10px;
+  text-align: center;
+}
+
+.castImage {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.castName {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.castCharacter {
+  font-size: 14px;
+  color: #555;
+}

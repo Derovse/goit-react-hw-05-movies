@@ -1,0 +1,18 @@
+/* Movies.module.css */
+
+.moviesContainer {
+  padding: 20px;
+}
+
+.loadMoreButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.loadMoreButton:hover {
+  background-color: darkblue;
+}

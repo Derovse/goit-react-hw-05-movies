@@ -1,0 +1,86 @@
+.movieDetailsContainer {
+  padding: 20px;
+}
+
+.goBackLink {
+  text-decoration: none;
+  color: #ffffff;
+  margin-bottom: 10px;
+  display: inline-block;
+  background-color: rgb(26, 22, 18);
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+.movieHeader {
+  background: center/cover no-repeat;
+  min-height: 400px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.moviePoster {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.movieInfo {
+  flex: 1;
+}
+
+.movieTitle {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.movieReleaseScore {
+  margin-bottom: 10px;
+}
+
+.movieOverview {
+  margin-bottom: 20px;
+}
+
+.movieGenres {
+  font-style: italic;
+}
+
+.moreInfoList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.moreInfoLink {
+  text-decoration: none;
+  color: #007bff;
+  margin-right: 10px;
+}
+
+.moreInfoList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.moreInfoLink {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.moreInfoLink:hover {
+  background-color: #0056b3;
+}

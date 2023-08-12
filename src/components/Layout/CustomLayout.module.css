@@ -1,0 +1,40 @@
+.customLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.customHeader {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.customNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customNavigationList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.customNavigationLink {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.customNavigationLink:hover {
+  background-color: #555;
+}
+
+.customMain {
+  padding: 20px;
+}

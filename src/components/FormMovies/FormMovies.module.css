@@ -1,0 +1,34 @@
+.form {
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.searchButton {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.searchButton:hover {
+  background-color: darkgray;
+  transform: scale(1.05);
+}
+
+.searchButton:active {
+  transform: scale(0.95);
+}
+.formInputContainer {
+  display: flex;
+  margin-bottom: 20px;
+}
