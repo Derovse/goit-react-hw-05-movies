@@ -9,8 +9,8 @@ const MoviesList = ({ filmsList }) => {
 
   return (
     <div className={styles.moviesListContainer}>
-      {filmsList?.map(({ id, original_title, poster_path }) => (
-        <div key={id} className={styles.moviesListItem}>
+      {filmsList?.map(({ id, original_title, poster_path }, index) => (
+        <div key={`${id}-${index}`} className={styles.moviesListItem}>
           <Link
             to={`/movies/${id}`}
             state={{ from: location }}

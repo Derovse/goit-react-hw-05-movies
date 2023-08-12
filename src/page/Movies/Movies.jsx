@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,22 +14,38 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchMovies = searchParams.get('query');
 
+  const fetchMoreMovies = useCallback(async () => {
+    if (!searchMovies) return;
+
+    try {
+      const nextPage = Math.ceil(movie.length / 20) + 1;
+      const searchMovie = await getFilmSearch(searchMovies, nextPage);
+      if (searchMovie.results.length === 0) {
+        toast.info('No more movies to load');
+      } else {
+        setMovie(prevMovies => [...prevMovies, ...searchMovie.results]);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, [searchMovies, movie]);
+
   useEffect(() => {
     if (!searchMovies) return;
     try {
       const fetchFilmSearch = async () => {
         setLoader(true);
         const searchMovie = await getFilmSearch(searchMovies);
-        setMovie(searchMovie.results);
         if (searchMovie.results.length === 0) {
-          setLoader(false);
-          return toast.error(`film not found ${searchMovies} `);
+          toast.error(`film not found ${searchMovies} `);
+        } else {
+          setMovie(searchMovie.results);
         }
+        setLoader(false);
       };
       fetchFilmSearch();
     } catch (error) {
       console.log(error);
-    } finally {
       setLoader(false);
     }
   }, [searchMovies]);
@@ -48,22 +64,7 @@ const Movies = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [movie, searchMovies]);
-
-  const fetchMoreMovies = async () => {
-    if (!searchMovies) return;
-
-    try {
-      const nextPage = Math.ceil(movie.length / 20) + 1;
-      const searchMovie = await getFilmSearch(searchMovies, nextPage);
-      setMovie(prevMovies => [...prevMovies, ...searchMovie.results]);
-      if (searchMovie.results.length === 0) {
-        toast.info('No more movies to load');
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  }, [movie, searchMovies, fetchMoreMovies]);
 
   return (
     <>
